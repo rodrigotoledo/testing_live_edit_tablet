@@ -1,0 +1,12 @@
+<%=turbo_frame_tag dom_id(movie) do %>
+<div class="grid grid-cols-5">
+  <div class="p-1 border"><%=movie.title %></div>
+  <div class="p-1 border"><%=movie.artist.name %></div>
+  <div class="p-1 border"><%=movie.short_description %></div>
+  <div class="p-1 border"><%=movie.year %></div>
+  <div class="p-1 border">
+    <%= link_to 'Edit', edit_movie_path(movie), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Destroy', movie_path(movie), method: :delete, data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: "rounded-lg py-3 ml-2 px-5 bg-red-400 inline-block font-medium" %>
+  </div>
+</div>
+<% end %>
